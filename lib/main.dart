@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:video_player_module/hls_video_player.dart';
 import 'package:video_player_module/yoyo_player.dart';
 import 'package:video_player_module/player_screen.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,16 +57,20 @@ var url = "https://deuk5ztnroigp.cloudfront.net/CHANNEL_24x7.m3u8";
   Widget build(BuildContext context) {
    
     return Scaffold(
+      backgroundColor: Colors.black54,
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-       
-        child: Column(
+      body: Container(
+    child: WebView(
+      javaScriptMode: JavaScriptMode.unrestricted,
+      initialUrl: Uri.dataFromString('<html><body><iframe width=\"100%\" height=\"100%\" src=\"https://deuk5ztnroigp.cloudfront.net/CHANNEL_24x7.m3u8\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></body></html>', mimeType: 'text/html').toString(),
+     
+    ),
+       /* Column(
          
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(child: Text("Play 1"),onPressed: (){
                  Navigator.of(context).push(new MaterialPageRoute(
@@ -84,7 +89,7 @@ Navigator.of(context).push(new MaterialPageRoute(
 
 
           ],
-        ),
+        ),*/
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

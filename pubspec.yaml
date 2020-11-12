@@ -23,6 +23,7 @@ environment:
 dependencies:
   yoyo_player: ^0.1.0
   hls_player: ^2.0.5
+  webview_flutter: ^0.1.2
   flutter:
     sdk: flutter
   

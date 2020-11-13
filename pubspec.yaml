@@ -21,9 +21,10 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  yoyo_player: ^0.1.0
+ # yoyo_player: ^0.1.0
   hls_player: ^2.0.5
   webview_flutter: ^0.1.2
+  chewie: ^0.9.10
   flutter:
     sdk: flutter
   
